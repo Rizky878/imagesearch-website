@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css"
+      integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+      integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Pinterest</title>
+  </head>
+  <body>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+    />
+    <div class="container bootstrap snippets bootdey">
+      <hr />
+      <ol class="breadcrumb">
+        <li><a href=" ">IkyyPin</a></li>
+        <li><a href="https://rzky.site">Rzkyy Dev.</a></li>
+        <li class="pull-right">
+          <a href="" class="text-muted"><i class="fa fa-arrow-right"></i></a>
+        </li>
+      </ol>
+      <div class="row">
+        <form action="/result" method="post">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="well search-result">
+            <div class="input-group">
+              <input type="text" class="form-control" name="nama" placeholder="Search Again..." required/>
+              <span class="input-group-btn">
+                <button class="btn btn-info btn-lg" type="button">
+                  <i class="glyphicon glyphicon-search"></i>
+                  Search
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+        </form>
+      </div>
+      <div class="loadmore-frame">
+        <div class="ast-container text-center p-1">
+          <div class="row m-0 justify-content-center align-items-center">
+            <% for (let i of result) { %>
+            <div class="col-md-4">
+              <div class="well search-result">
+                <div class="row">
+                  <a href=<%= i %>>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <img
+                        class="img-responsive"
+                        src=<%= i %>
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <% } %>
+          </div>
+        </div>
+        <div id="arrpw" class="row">
+          <button type="button" class="load-more btn btn-info btn-block">
+            <i class="glyphicon glyphicon-refresh"></i>Load more...
+          </button>
+        </div>
+      </div>
+    </div>
+    <h5 class="message">Copyright Rzkyy Dev - <%= new Date().getFullYear() %></h5>
+    <script>
+        
+      jQuery(document).ready(function ($) {
+        $(function () {
+          $(".loadmore-frame .col-md-4").slice(0, 6).slideDown(2000);
+          $("body").on(
+            "click touchstart",
+            ".loadmore-frame .load-more",
+            function (e) {
+              e.preventDefault();
+              $(".loadmore-frame .col-md-4:hidden").slice(0, 6).slideDown("slow");
+              if ($(".loadmore-frame .col-md-4:hidden").length == 0) {
+                $(".loadmore-frame .load-more").text("No more result, Please search again...");;
+              }
+              $("html,body").animate(
+                {
+                  scrollTop: $(this).offset().top,
+                },
+                1000
+              );
+            }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

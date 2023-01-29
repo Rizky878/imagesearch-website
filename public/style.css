@@ -1,0 +1,49 @@
+body {
+  background: #eee;
+}
+.search-result .title h3 {
+  margin: 0 0 15px;
+  color: #333;
+  text-align: center;
+}
+.search-result .title p {
+  font-size: 12px;
+  color: #333;
+}
+
+.loadmore-frame .col-md-4 {
+  display: none;
+  padding: 2rem;
+}
+
+.message {
+  color: #000;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.well {
+  border: 0;
+  padding: 18px;
+  min-height: 60px;
+  background: #fff;
+  box-shadow: none;
+  text-align: center;
+  border-radius: 3px;
+  position: relative;
+  max-height: 10000px;
+  border-bottom: 2px solid #ccc;
+  transition: max-height 0.5s ease;
+  -o-transition: max-height 0.5s ease;
+  -ms-transition: max-height 0.5s ease;
+  -moz-transition: max-height 0.5s ease;
+  -webkit-transition: max-height 0.5s ease;
+}
+.form-control {
+  height: 45px;
+  padding: 10px;
+  font-size: 16px;
+  box-shadow: none;
+  border-radius: 0;
+  position: relative;
+}
