@@ -5,5 +5,15 @@
     "express": "^4.18.2",
     "fake-useragent": "^1.0.1",
     "ikyy": "^5.0.7"
-  }
+  },
+  "name": "imagesearch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "RizkyFadilah",
+  "license": "ISC",
+  "description": ""
 }
